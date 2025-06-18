@@ -2111,10 +2111,10 @@
     <a name="circuit" val="SemaforoProgramableE9"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="4.0"/>
-    <comp lib="0" loc="(1090,340)" name="Tunnel">
+    <comp lib="0" loc="(1130,340)" name="Tunnel">
       <a name="label" val="S0"/>
     </comp>
-    <comp lib="0" loc="(1100,380)" name="Tunnel">
+    <comp lib="0" loc="(1130,380)" name="Tunnel">
       <a name="label" val="S1"/>
     </comp>
     <comp lib="0" loc="(1160,590)" name="Tunnel">
@@ -2191,8 +2191,9 @@
     <comp loc="(1090,340)" name="EstadoSemaforoE9"/>
     <comp loc="(1120,590)" name="SalidaE9"/>
     <comp loc="(750,300)" name="TransicionSemaforoE9"/>
+    <wire from="(1090,340)" to="(1130,340)"/>
     <wire from="(1090,360)" to="(1090,380)"/>
-    <wire from="(1090,380)" to="(1100,380)"/>
+    <wire from="(1090,380)" to="(1130,380)"/>
     <wire from="(1120,590)" to="(1160,590)"/>
     <wire from="(1120,610)" to="(1240,610)"/>
     <wire from="(1120,630)" to="(1240,630)"/>
@@ -2236,15 +2237,14 @@
     <a name="circuit" val="TransicionSemaforoE9"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="4.0"/>
+    <comp lib="0" loc="(150,600)" name="Clock"/>
+    <comp lib="0" loc="(150,640)" name="Pin">
+      <a name="appearance" val="classic"/>
+    </comp>
     <comp lib="0" loc="(160,470)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="Estado"/>
       <a name="width" val="2"/>
-    </comp>
-    <comp lib="0" loc="(180,560)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="label" val="Contador"/>
-      <a name="width" val="4"/>
     </comp>
     <comp lib="0" loc="(200,470)" name="Splitter">
       <a name="appear" val="right"/>
@@ -2280,7 +2280,16 @@
     <comp lib="2" loc="(640,320)" name="Multiplexer">
       <a name="select" val="4"/>
     </comp>
+    <comp lib="4" loc="(180,560)" name="Counter">
+      <a name="appearance" val="classic"/>
+      <a name="max" val="0xf"/>
+      <a name="width" val="4"/>
+    </comp>
+    <wire from="(150,600)" to="(160,600)"/>
+    <wire from="(150,640)" to="(170,640)"/>
     <wire from="(160,470)" to="(200,470)"/>
+    <wire from="(160,580)" to="(160,600)"/>
+    <wire from="(170,580)" to="(170,640)"/>
     <wire from="(180,560)" to="(370,560)"/>
     <wire from="(220,480)" to="(250,480)"/>
     <wire from="(220,510)" to="(220,740)"/>
